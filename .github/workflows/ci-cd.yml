@@ -51,7 +51,7 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     environment:
       name: production
-      url: http://temi.vudse26cloud.com
+      url: http://temi.vudse26.cloud
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
