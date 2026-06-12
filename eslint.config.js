@@ -2,24 +2,26 @@ const js = require('@eslint/js');
 
 module.exports = [
   {
-    ignores: ['dist/', 'coverage/', 'node_modules/', 'assets/js/bootstrap.min.js', 'assets/css/']
+    ignores: [
+      'dist/**',
+      'coverage/**',
+      'node_modules/**',
+      'assets/js/bootstrap.min.js',
+      'assets/js/script.js',
+      'assets/css/**'
+    ]
   },
   js.configs.recommended,
   {
-    files: ['**/*.js'],
+    files: ['src/**/*.js', 'tests/**/*.js', 'scripts/**/*.mjs'],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'commonjs',
       globals: {
-        window: 'readonly',
-        document: 'readonly',
-        localStorage: 'readonly',
         console: 'readonly',
         module: 'writable',
         require: 'readonly',
         process: 'readonly',
-        evaluateExpression: 'readonly',
-        toSignificantFigures: 'readonly',
         describe: 'readonly',
         it: 'readonly',
         expect: 'readonly'
@@ -32,7 +34,7 @@ module.exports = [
     }
   },
   {
-    files: ['**/*.mjs'],
+    files: ['scripts/**/*.mjs'],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'module',
